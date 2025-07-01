@@ -1,0 +1,50 @@
+@reference "tailwindcss";
+
+.headerContainer {
+  @apply bg-white shadow-md;
+}
+
+.topRow {
+  @apply flex items-center justify-between px-6 py-2;
+}
+
+.logo {
+  @apply h-10;
+}
+
+.contactGroup {
+  @apply flex items-center space-x-4 text-sm text-gray-700;
+}
+
+.searchInput {
+  @apply border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+.socialIcons {
+  @apply flex items-center space-x-3;
+}
+
+.bookButton {
+  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition;
+}
+
+.navBar {
+  @apply bg-blue-50;
+}
+
+.navList {
+  @apply flex space-x-6 px-6 py-3;
+}
+
+.navItem {
+  @apply text-gray-800 hover:text-blue-600 font-medium;
+}
+
+/* 
+  If you need to style a <video> element (or any other tag), scope it under one
+  of your local classes. For example:
+
+  .videoWrapper video {
+    /* your styles here *\/
+  }
+*/
