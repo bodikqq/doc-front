@@ -1,50 +1,123 @@
 @reference "tailwindcss";
 
-.headerContainer {
-  @apply bg-white shadow-md;
+.header {
+  @apply bg-white shadow-md w-full transition-all duration-300 ease-in-out;
 }
 
-.topRow {
-  @apply flex items-center justify-between px-6 py-2;
+/* Top Bar Styles */
+.topBar {
+  @apply container mx-auto flex items-center justify-between px-4 py-3;
+}
+
+.logoContainer {
+  @apply flex items-center;
 }
 
 .logo {
-  @apply h-10;
+  @apply h-12 w-auto; /* Adjust height as needed */
 }
 
-.contactGroup {
-  @apply flex items-center space-x-4 text-sm text-gray-700;
+.logoText {
+    @apply text-xl font-bold text-gray-800 ml-3;
+}
+
+.contactInfo {
+  @apply hidden md:flex items-center text-gray-600;
+}
+
+.contactInfo svg {
+  @apply w-5 h-5 mr-2 text-blue-700;
+}
+
+.actions {
+  @apply flex items-center space-x-4;
+}
+
+/* Search Bar Styles */
+.searchContainer {
+  @apply relative hidden lg:block;
 }
 
 .searchInput {
-  @apply border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500;
+  @apply w-full pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300;
+  min-width: 250px;
 }
 
+.searchIcon {
+  @apply absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400;
+}
+
+/* Social Icons */
 .socialIcons {
-  @apply flex items-center space-x-3;
+  @apply hidden sm:flex items-center space-x-3;
 }
 
-.bookButton {
-  @apply bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition;
+.socialIcon {
+  @apply text-gray-500 hover:text-blue-700 transition-colors duration-300;
 }
 
+.socialIcon svg {
+  @apply w-6 h-6;
+}
+
+/* Appointment Button */
+.appointmentButton {
+  @apply bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105;
+}
+
+/* Navigation Bar Styles */
 .navBar {
-  @apply bg-blue-50;
+  @apply bg-gray-50 border-t border-b border-gray-200;
+}
+
+.nav {
+  @apply container mx-auto flex items-center justify-center px-4;
 }
 
 .navList {
-  @apply flex space-x-6 px-6 py-3;
+  @apply flex space-x-8;
 }
 
 .navItem {
-  @apply text-gray-800 hover:text-blue-600 font-medium;
+  @apply list-none;
 }
 
-/* 
-  If you need to style a <video> element (or any other tag), scope it under one
-  of your local classes. For example:
+.navLink {
+  @apply block py-4 text-gray-700 font-medium border-b-2 border-transparent hover:text-blue-700 hover:border-blue-700 transition-all duration-300 ease-in-out;
+}
 
-  .videoWrapper video {
-    /* your styles here *\/
-  }
-*/
+.navLinkActive {
+  @apply text-blue-700 border-blue-700;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+    @apply md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500;
+}
+
+.mobileMenuButton svg {
+    @apply h-6 w-6;
+}
+
+/* Mobile Menu Panel */
+.mobileMenu {
+    @apply absolute top-full left-0 w-full bg-white shadow-xl md:hidden z-50;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+}
+
+.mobileNavList {
+    @apply flex flex-col items-center p-4;
+}
+
+.mobileNavItem {
+    @apply w-full text-center;
+}
+
+.mobileNavLink {
+    @apply block py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors duration-200;
+}
