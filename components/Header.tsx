@@ -29,9 +29,14 @@ const Header = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" fill="#0052CC" />
+            <path 
+              d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z" 
+              fill="currentColor" 
+              className="text-blue-600"
+            />
+            <circle cx="12" cy="12" r="3" fill="currentColor" className="text-blue-400" />
           </svg>
-          <span className={styles.logoText}>HealthCare</span>
+          <span className={styles.logoText}>Dr. Работенко</span>
         </div>
 
         {/* Nav Links inline */}

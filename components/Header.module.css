@@ -1,73 +1,41 @@
 @reference "tailwindcss";
-/* Enhanced Header.module.css */
+
 .header {
-  @apply bg-[#bcdde8] shadow-lg backdrop-blur-sm sticky top-0 z-50 transition-all duration-300;
+  @apply bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300 border-b border-slate-100;
 }
 
 /* Top Bar Styles */
 .topBar {
-  @apply container mx-auto flex items-center justify-between px-6 lg:px-40 py-1;
+  @apply max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-4;
 }
 
 .logoContainer {
-  @apply flex items-center space-x-4;
+  @apply flex items-center space-x-3;
 }
 
 .logo {
-  @apply h-12 w-auto transform transition-transform duration-300 hover:scale-105;
+  @apply h-10 w-auto transform transition-transform duration-300 hover:scale-105;
 }
 
 .logoText {
-  @apply text-2xl font-extrabold text-[#03045e];
+  @apply text-2xl font-bold text-slate-900;
 }
 
 .contactInfo {
-  @apply hidden md:flex items-center text-[#6c757d] space-x-2;
+  @apply hidden md:flex items-center text-slate-600 space-x-2;
 }
 
 .contactInfo svg {
-  @apply w-6 h-6 text-[#0077b6];
+  @apply w-5 h-5 text-blue-600;
 }
 
 .actions {
   @apply flex items-center space-x-4;
 }
 
-/* Social Icons */
-.socialIcons {
-  @apply hidden sm:flex items-center space-x-3;
-}
-
-.socialIcon {
-  @apply p-2 rounded-full hover:bg-[#caf0f8] transition-colors duration-200;
-}
-
-.socialIcon svg {
-  @apply w-6 h-6 text-[#6c757d] hover:text-[#0077b6];
-}
-
-.appointmentButton {
-  @apply bg-gradient-to-r from-[#0077b6] to-[#0096c7]
-         text-white font-semibold
-         py-2 px-6 rounded-full
-         shadow-lg
-         hover:from-[#0096c7] hover:to-[#00b4d8]
-         active:scale-95
-         focus:outline-none focus:ring-4 focus:ring-[#90e0ef]
-         transition-all duration-300;
-}
-
-/* Navigation Bar Styles */
-.navBar {
-  @apply bg-white border-t border-b border-gray-200;
-}
-
-.nav {
-  @apply container mx-auto flex items-center justify-center px-6;
-}
-
+/* Navigation List */
 .navList {
-  @apply flex space-x-6 pt-2;
+  @apply hidden lg:flex items-center space-x-8;
 }
 
 .navItem {
@@ -75,12 +43,12 @@
 }
 
 .navLink {
-  @apply relative inline-block py-4 text-[#03045e] font-medium overflow-hidden;
+  @apply relative inline-block py-2 text-slate-700 font-medium hover:text-blue-600 transition-colors duration-200;
 }
 
 .navLink::after {
   content: '';
-  @apply absolute left-1/2 -bottom-1 w-0 h-1 bg-[#0077b6] transition-all duration-300;
+  @apply absolute left-1/2 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all duration-300;
 }
 
 .navLink:hover::after {
@@ -88,16 +56,41 @@
 }
 
 .navLinkActive {
-  @apply text-[#0077b6];
+  @apply text-blue-600;
 }
 
 .navLinkActive::after {
   @apply left-0 w-full;
 }
 
+/* Social Icons */
+.socialIcons {
+  @apply hidden sm:flex items-center space-x-2;
+}
+
+.socialIcon {
+  @apply p-2 rounded-lg hover:bg-slate-100 transition-colors duration-200;
+}
+
+.socialIcon svg {
+  @apply w-5 h-5 text-slate-600 hover:text-blue-600;
+}
+
+.appointmentButton {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700
+         text-white font-semibold
+         py-3 px-6 rounded-xl
+         shadow-lg shadow-blue-600/25
+         hover:from-blue-700 hover:to-blue-800
+         hover:shadow-xl hover:shadow-blue-600/30
+         active:scale-95
+         focus:outline-none focus:ring-4 focus:ring-blue-600/20
+         transition-all duration-300;
+}
+
 /* Mobile Menu Button */
 .mobileMenuButton {
-  @apply md:hidden p-2 rounded-md text-[#6c757d] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#0077b6] transition-all duration-200;
+  @apply lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600/20 transition-all duration-200;
 }
 
 .mobileMenuButton svg {
@@ -106,15 +99,15 @@
 
 /* Mobile Menu Panel */
 .mobileMenu {
-  @apply absolute top-full left-0 w-full bg-white shadow-2xl md:hidden z-50 transform -translate-y-full transition-transform duration-300;
+  @apply absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-xl lg:hidden z-50 border-t border-slate-100 transform -translate-y-full opacity-0 transition-all duration-300;
 }
 
 .mobileMenu.open {
-  @apply translate-y-0;
+  @apply translate-y-0 opacity-100;
 }
 
 .mobileNavList {
-  @apply flex flex-col items-center p-6 space-y-4;
+  @apply flex flex-col p-6 space-y-1;
 }
 
 .mobileNavItem {
@@ -122,5 +115,5 @@
 }
 
 .mobileNavLink {
-  @apply block w-full text-center py-3 text-[#03045e] hover:bg-[#caf0f8] hover:text-[#0077b6] rounded-md transition-colors duration-200;
+  @apply block w-full text-left py-3 px-4 text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-lg transition-colors duration-200 font-medium;
 }
