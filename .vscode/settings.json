@@ -1,13 +1,1 @@
 // settings.json
-{
-  // 1) Keep .css as normal CSS
-  "files.associations": {
-    "*.css": "postcss",
-    "*.pcss": "postcss"      // <-- only your Tailwind file(s)
-  },
-
-  // 2) Still ignore unknown at-rules
-  "css.lint.unknownAtRules": "ignore",
-  "scss.lint.unknownAtRules": "ignore",
-  "less.lint.unknownAtRules": "ignore"
-}

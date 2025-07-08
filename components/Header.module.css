@@ -1,50 +1,36 @@
 @reference "tailwindcss";
-
+/* Enhanced Header.module.css */
 .header {
-  @apply bg-white shadow-md w-full transition-all duration-300 ease-in-out;
+  @apply bg-[#bcdde8] shadow-lg backdrop-blur-sm sticky top-0 z-50 transition-all duration-300;
 }
 
 /* Top Bar Styles */
 .topBar {
-  @apply container mx-auto flex items-center justify-between px-4 py-3;
+  @apply container mx-auto flex items-center justify-between px-6 lg:px-40 py-1;
 }
 
 .logoContainer {
-  @apply flex items-center;
+  @apply flex items-center space-x-4;
 }
 
 .logo {
-  @apply h-12 w-auto; /* Adjust height as needed */
+  @apply h-12 w-auto transform transition-transform duration-300 hover:scale-105;
 }
 
 .logoText {
-    @apply text-xl font-bold text-gray-800 ml-3;
+  @apply text-2xl font-extrabold text-[#03045e];
 }
 
 .contactInfo {
-  @apply hidden md:flex items-center text-gray-600;
+  @apply hidden md:flex items-center text-[#6c757d] space-x-2;
 }
 
 .contactInfo svg {
-  @apply w-5 h-5 mr-2 text-blue-700;
+  @apply w-6 h-6 text-[#0077b6];
 }
 
 .actions {
   @apply flex items-center space-x-4;
-}
-
-/* Search Bar Styles */
-.searchContainer {
-  @apply relative hidden lg:block;
-}
-
-.searchInput {
-  @apply w-full pl-10 pr-4 py-2 border rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300;
-  min-width: 250px;
-}
-
-.searchIcon {
-  @apply absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400;
 }
 
 /* Social Icons */
@@ -53,29 +39,35 @@
 }
 
 .socialIcon {
-  @apply text-gray-500 hover:text-blue-700 transition-colors duration-300;
+  @apply p-2 rounded-full hover:bg-[#caf0f8] transition-colors duration-200;
 }
 
 .socialIcon svg {
-  @apply w-6 h-6;
+  @apply w-6 h-6 text-[#6c757d] hover:text-[#0077b6];
 }
 
-/* Appointment Button */
 .appointmentButton {
-  @apply bg-blue-700 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-800 transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105;
+  @apply bg-gradient-to-r from-[#0077b6] to-[#0096c7]
+         text-white font-semibold
+         py-2 px-6 rounded-full
+         shadow-lg
+         hover:from-[#0096c7] hover:to-[#00b4d8]
+         active:scale-95
+         focus:outline-none focus:ring-4 focus:ring-[#90e0ef]
+         transition-all duration-300;
 }
 
 /* Navigation Bar Styles */
 .navBar {
-  @apply bg-gray-50 border-t border-b border-gray-200;
+  @apply bg-white border-t border-b border-gray-200;
 }
 
 .nav {
-  @apply container mx-auto flex items-center justify-center px-4;
+  @apply container mx-auto flex items-center justify-center px-6;
 }
 
 .navList {
-  @apply flex space-x-8;
+  @apply flex space-x-6 pt-2;
 }
 
 .navItem {
@@ -83,41 +75,52 @@
 }
 
 .navLink {
-  @apply block py-4 text-gray-700 font-medium border-b-2 border-transparent hover:text-blue-700 hover:border-blue-700 transition-all duration-300 ease-in-out;
+  @apply relative inline-block py-4 text-[#03045e] font-medium overflow-hidden;
+}
+
+.navLink::after {
+  content: '';
+  @apply absolute left-1/2 -bottom-1 w-0 h-1 bg-[#0077b6] transition-all duration-300;
+}
+
+.navLink:hover::after {
+  @apply left-0 w-full;
 }
 
 .navLinkActive {
-  @apply text-blue-700 border-blue-700;
+  @apply text-[#0077b6];
+}
+
+.navLinkActive::after {
+  @apply left-0 w-full;
 }
 
 /* Mobile Menu Button */
 .mobileMenuButton {
-    @apply md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500;
+  @apply md:hidden p-2 rounded-md text-[#6c757d] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#0077b6] transition-all duration-200;
 }
 
 .mobileMenuButton svg {
-    @apply h-6 w-6;
+  @apply h-6 w-6;
 }
 
 /* Mobile Menu Panel */
 .mobileMenu {
-    @apply absolute top-full left-0 w-full bg-white shadow-xl md:hidden z-50;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
+  @apply absolute top-full left-0 w-full bg-white shadow-2xl md:hidden z-50 transform -translate-y-full transition-transform duration-300;
 }
 
 .mobileMenu.open {
-    transform: translateY(0);
+  @apply translate-y-0;
 }
 
 .mobileNavList {
-    @apply flex flex-col items-center p-4;
+  @apply flex flex-col items-center p-6 space-y-4;
 }
 
 .mobileNavItem {
-    @apply w-full text-center;
+  @apply w-full;
 }
 
 .mobileNavLink {
-    @apply block py-3 text-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-md transition-colors duration-200;
+  @apply block w-full text-center py-3 text-[#03045e] hover:bg-[#caf0f8] hover:text-[#0077b6] rounded-md transition-colors duration-200;
 }
